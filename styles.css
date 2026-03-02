@@ -496,3 +496,14 @@ body.menuOpen .menuBackdrop{
   color:rgba(255,255,255,.70);
   font-size:13px;
 }
+
+/* Hide timeline line on mobile */
+@media (max-width: 768px) {
+  .timeline::before {
+    display: none !important;
+  }
+
+  .tItem::before {
+    display: none !important;
+  }
+}

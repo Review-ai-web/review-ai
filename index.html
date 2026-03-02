@@ -6,6 +6,7 @@
   <title>Review AI</title>
   <meta name="description" content="Analyze e-commerce product reviews (Sinhala, English, Singlish) using AI to predict GOOD/BAD and generate a summary." />
   <link rel="stylesheet" href="styles.css" />
+
 </head>
 
 <body>
@@ -256,5 +257,34 @@
 	</section>
 
   </div>
+
+<script>
+  const burger = document.querySelector(".burger");
+  const menu = document.querySelector(".mobileMenu");
+  const backdrop = document.querySelector(".menuBackdrop");
+  const closeBtn = document.querySelector(".closeMenu");
+
+  function openMenu() {
+    document.body.classList.add("menuOpen");
+    burger?.setAttribute("aria-expanded", "true");
+    menu?.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenu() {
+    document.body.classList.remove("menuOpen");
+    burger?.setAttribute("aria-expanded", "false");
+    menu?.setAttribute("aria-hidden", "true");
+  }
+
+  burger?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+  backdrop?.addEventListener("click", closeMenu);
+
+  // close after clicking a link
+  document.querySelectorAll(".mobileLinks a").forEach(a => {
+    a.addEventListener("click", closeMenu);
+  });
+</script>
+
 </body>
 </html>
